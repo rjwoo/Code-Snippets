@@ -1,0 +1,17 @@
+<h1>Code Snippets</h1>
+<hr>
+
+<%= form_for @snippet do |f| %>
+  <div>
+  Kind <%= f.collection_select :kind_id, Kind.order(:name), :id, :name %>
+  </div><br>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div><br>
+  <div>
+    <%= f.label :work %>
+    <%= f.text_area :work %>
+  </div><br>
+  <%= f.submit "Save" %>
+<% end %>
